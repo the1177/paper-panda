@@ -246,6 +246,167 @@
             z-index: -1;
         }
 
+        /* Reviews Section */
+        .reviews {
+            background: var(--gray-light);
+            padding: 100px 20px;
+            overflow: hidden;
+        }
+
+        .reviews h2 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: var(--black);
+        }
+
+        .reviews-carousel {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .reviews-track {
+            display: flex;
+            gap: 30px;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .review-card {
+            flex: 0 0 calc(33.333% - 20px);
+            background: var(--white);
+            padding: 40px 35px;
+            border: 1px solid rgba(0,0,0,0.08);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .review-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: rgba(0,0,0,0.08);
+            line-height: 1;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .review-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 20px;
+        }
+
+        .review-stars i {
+            color: var(--black);
+            font-size: 0.9rem;
+        }
+
+        .review-stars i.half {
+            position: relative;
+        }
+
+        .review-stars i.half::after {
+            content: '\f005';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 400;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50%;
+            overflow: hidden;
+            color: var(--black);
+        }
+
+        .review-text {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--gray-dark);
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .review-author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--black);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .review-author-info h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            margin-bottom: 3px;
+        }
+
+        .review-author-info span {
+            font-size: 0.85rem;
+            color: var(--gray-mid);
+        }
+
+        .reviews-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 50px;
+        }
+
+        .reviews-nav button {
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border: 2px solid var(--black);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .reviews-nav button:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .reviews-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .reviews-dot {
+            width: 12px;
+            height: 12px;
+            background: transparent;
+            border: 2px solid var(--black);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .reviews-dot.active {
+            background: var(--black);
+        }
+
         /* Features Section */
         .features {
             background: var(--gray-light);
@@ -626,6 +787,10 @@
                 order: -1;
             }
 
+            .review-card {
+                flex: 0 0 calc(50% - 15px);
+            }
+
             .personalization-content {
                 grid-template-columns: 1fr;
             }
@@ -678,6 +843,18 @@
 
             .personalization-images {
                 grid-template-columns: 1fr;
+            }
+
+            .review-card {
+                flex: 0 0 100%;
+            }
+
+            .reviews h2 {
+                font-size: 2rem;
+            }
+
+            .reviews-track {
+                gap: 20px;
             }
 
             footer {
@@ -739,6 +916,164 @@
                     <img src="images/handmade.jpeg" alt="Proceso de trabajo artesanal">
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <div class="container">
+            <h2>Lo Que Dicen Nuestros Clientes</h2>
+            <div class="reviews-carousel">
+                <div class="reviews-track" id="reviews-track">
+                    <!-- Review 1 -->
+                    <div class="review-card reveal">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">
+                            Me encantó mi libreta!!! La calidad esta super increíble y el grabado quedó perfecto. 
+                            Muchas gracias por la atención tan amable, se nota que aman lo que hacen! 
+                            Definitivamente regresaré por más!
+                        </p>
+                        <div class="review-author">
+                            <div class="review-author-avatar">M</div>
+                            <div class="review-author-info">
+                                <h4>Mariana G.</h4>
+                                <span>Cancún, Q.R.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="review-card reveal">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">
+                            Mi esposo quedó súper feliz con su regalito de aniversario. La cartera personalizada 
+                            con sus iniciales le fascinó, Mil gracias chicos por hacer este momento tan especial! 
+                            El empaque también estuvo precioso.
+                        </p>
+                        <div class="review-author">
+                            <div class="review-author-avatar">L</div>
+                            <div class="review-author-info">
+                                <h4>Laura P.</h4>
+                                <span>Cancún, Q.R.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="review-card reveal">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-stroke"></i>
+                        </div>
+                        <p class="review-text">
+                            Compré varias libretas como regalo para mi equipo de trabajo. Todo excelente: 
+                            la calidad, la entrega a tiempo y el acabado profesional. Muy recomendados para 
+                            regalos corporativos Y afines. 
+                        </p>
+                        <div class="review-author">
+                            <div class="review-author-avatar">R</div>
+                            <div class="review-author-info">
+                                <h4>Roberto M.</h4>
+                                <span>Cancún, Q.R.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div class="review-card reveal">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">
+                            Trato muy profesional desde el primer contacto. Personalizaron mis libretas 
+                            exactamente acorde a mis instrucciones, incluyendo un diseño bastante elaborado q mandé. 
+                            La comunicación fue excelente. Sin duda volveré a comprar.
+                        </p>
+                        <div class="review-author">
+                            <div class="review-author-avatar">A</div>
+                            <div class="review-author-info">
+                                <h4>Andrea V.</h4>
+                                <span>Cancún, Q.R.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 5 -->
+                    <div class="review-card reveal">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">
+                            Pedí una libreta y un llavero también con el nombre de mi mamá para su 
+                            cumpleaños y quedó hermoso. El detalle del grabado que hacen esta increible.  
+                            Gracias por el detaillito, tambien pediré uno para mi!!!
+                        </p>
+                        <div class="review-author">
+                            <div class="review-author-avatar">S</div>
+                            <div class="review-author-info">
+                                <h4>Sofía R.</h4>
+                                <span>Tulum, Q.R.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 6 -->
+                    <div class="review-card reveal">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-stroke"></i>
+                        </div>
+                        <p class="review-text">
+                            Encontré Paper Panda por Instagram y me atendieron super bien. Mi diario de viajes 
+                            quedó espectacular, con mi nombre y un pequeño avión grabado. La piel tiene un 
+                            aroma delicioso y se siente de muy buena calidad. Me gustó mucho el charm que 
+                            mandaron de regalo. Mil gracias!
+                        </p>
+                        <div class="review-author">
+                            <div class="review-author-avatar">D</div>
+                            <div class="review-author-info">
+                                <h4>Daniel F.</h4>
+                                <span>CDMX</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reviews-nav">
+                <button onclick="moveReviews(-1)" aria-label="Anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button onclick="moveReviews(1)" aria-label="Siguiente">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="reviews-dots" id="reviews-dots"></div>
         </div>
     </section>
 
@@ -943,6 +1278,111 @@
                 }
             });
         });
+
+        // Reviews Carousel
+        const reviewsTrack = document.getElementById('reviews-track');
+        const reviewCards = document.querySelectorAll('.review-card');
+        const dotsContainer = document.getElementById('reviews-dots');
+        let currentIndex = 0;
+        let cardsPerView = 3;
+        let autoplayInterval;
+
+        function updateCardsPerView() {
+            if (window.innerWidth <= 600) {
+                cardsPerView = 1;
+            } else if (window.innerWidth <= 968) {
+                cardsPerView = 2;
+            } else {
+                cardsPerView = 3;
+            }
+        }
+
+        function getTotalSlides() {
+            return Math.ceil(reviewCards.length / cardsPerView);
+        }
+
+        function createDots() {
+            dotsContainer.innerHTML = '';
+            const totalSlides = getTotalSlides();
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('reviews-dot');
+                if (i === currentIndex) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function updateDots() {
+            const dots = document.querySelectorAll('.reviews-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        function getCardWidth() {
+            if (reviewCards.length === 0) return 0;
+            const card = reviewCards[0];
+            const style = window.getComputedStyle(reviewsTrack);
+            const gap = parseInt(style.gap) || 30;
+            return card.offsetWidth + gap;
+        }
+
+        function moveReviews(direction) {
+            const totalSlides = getTotalSlides();
+            currentIndex += direction;
+            
+            if (currentIndex >= totalSlides) {
+                currentIndex = 0;
+            } else if (currentIndex < 0) {
+                currentIndex = totalSlides - 1;
+            }
+            
+            updateCarousel();
+            resetAutoplay();
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+            resetAutoplay();
+        }
+
+        function updateCarousel() {
+            const cardWidth = getCardWidth();
+            const offset = currentIndex * cardsPerView * cardWidth;
+            reviewsTrack.style.transform = `translateX(-${offset}px)`;
+            updateDots();
+        }
+
+        function startAutoplay() {
+            autoplayInterval = setInterval(() => {
+                moveReviews(1);
+            }, 5000);
+        }
+
+        function resetAutoplay() {
+            clearInterval(autoplayInterval);
+            startAutoplay();
+        }
+
+        // Initialize carousel
+        updateCardsPerView();
+        createDots();
+        startAutoplay();
+
+        // Handle resize
+        window.addEventListener('resize', () => {
+            updateCardsPerView();
+            createDots();
+            currentIndex = Math.min(currentIndex, getTotalSlides() - 1);
+            updateCarousel();
+        });
+
+        // Pause autoplay on hover
+        const reviewsSection = document.querySelector('.reviews-carousel');
+        reviewsSection.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+        reviewsSection.addEventListener('mouseleave', startAutoplay);
     </script>
 </body>
 </html>
